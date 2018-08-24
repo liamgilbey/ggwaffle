@@ -30,7 +30,7 @@ waffle_data = waffle_iron(mpg, aes_d(group = class))
 ggplot(waffle_data, aes(x, y, fill = group)) + 
   geom_waffle()
 ```
-![]("https://github.com/liamgilbey/ggwaffle/blob/master/man/figures/README-example1.png")
+![]("https://github.com/liamgilbey/ggwaffle/raw/master/man/figures/README-example1.png")
 
 Functions have also been included to make the default graphics more visually appealling.
 ``theme_waffle`` is a ggplot theme that strips back a lot of the elements of the waffle to create a cleaner look. ``scale_fill_waffle`` returns a discrete scale to make your charts look a lot like waffles.
@@ -46,4 +46,4 @@ ggplot(waffle_data, aes(x, y, fill = group)) +
   scale_fill_waffle() + 
   theme_waffle()
 ```
-![]("https://github.com/liamgilbey/ggwaffle/blob/master/man/figures/README-example2.png")
+![]("https://github.com/liamgilbey/ggwaffle/raw/master/man/figures/README-example2.png")
