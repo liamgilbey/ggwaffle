@@ -4,10 +4,9 @@
 \name{ggwaffle-package}
 \alias{ggwaffle}
 \alias{ggwaffle-package}
-\title{ggwaffle: Create Square Waffle Charts}
+\title{ggwaffle: Waffle Charts}
 \description{
-More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Creates waffle charts in a ggplot2-friendly way.
 }
 \author{
 \strong{Maintainer}: Liam Gilbey \email{liam.gilbey@gmail.com}

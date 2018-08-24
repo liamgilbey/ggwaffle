@@ -12,6 +12,10 @@ aes_d_rename <- function(data, mapping){
 
 #' Aesthetic mappings for datasets
 #'
+#' The idea comes straight from \code{aes} in ggplot2. That provides a way to map columns of a dataset to features of graphic.
+#' Here we are mapping columns into a function so we can use standard names inside that function.
+#'
+#' A mapping looks like: <column_to_be_created> = <existing column>
 #' @export
 #' @examples
 #' aes_d(group = class)

@@ -1,17 +1,16 @@
 Package: ggwaffle
 Type: Package
-Title: Create Square Waffle Charts
+Title: Waffle Charts
 Version: 0.1.0
+Date: 2018-08-24
 Authors@R: c(
     person("Liam", "Gilbey", email = "liam.gilbey@gmail.com", role = c("aut", "cre"), 
            )
   )
 Maintainer: Liam Gilbey <liam.gilbey@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Creates waffle charts in a ggplot2-friendly way.
 License: None
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 6.1.0
 Depends:
     ggplot2 (>= 2.0.0)

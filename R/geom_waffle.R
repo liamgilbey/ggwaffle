@@ -3,7 +3,7 @@
 #' @inheritParams ggplot2::geom_tile
 #' @export
 #' @examples
-#' ggplot(data = iron(mpg, aes_d(group = class)), aes(x, y, fill = group)) +
+#' ggplot(data = waffle_iron(mpg, aes_d(group = class)), aes(x, y, fill = group)) +
 #' geom_waffle() +
 #' coord_equal()
 geom_waffle <- function(mapping = NULL, data = NULL,

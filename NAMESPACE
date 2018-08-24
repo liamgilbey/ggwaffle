@@ -3,5 +3,7 @@
 export(GeomWaffle)
 export(aes_d)
 export(geom_waffle)
-export(iron)
+export(scale_fill_waffle)
+export(theme_waffle)
+export(waffle_iron)
 import(ggplot2)
