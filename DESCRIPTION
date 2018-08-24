@@ -5,10 +5,13 @@ Version: 0.1.0
 Authors@R: c(
     person("Liam", "Gilbey", email = "liam.gilbey@gmail.com", role = c("aut", "cre"), 
            )
-)
+  )
 Maintainer: Liam Gilbey <liam.gilbey@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
-Encoding: GPL (>= 2)
+License: None
+Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.0
+Depends:
+    ggplot2 (>= 2.0.0)
