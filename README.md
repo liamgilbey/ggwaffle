@@ -1,4 +1,4 @@
-# ggwaffle
+# ggwaffle <img src="man/figures/sticker.png" align="right" />
 
 Create waffle visualisations in ggplot2-friendly way.
 
