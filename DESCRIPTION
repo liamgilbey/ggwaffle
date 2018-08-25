@@ -9,8 +9,10 @@ Authors@R: c(
   )
 Maintainer: Liam Gilbey <liam.gilbey@gmail.com>
 Description: Creates waffle charts in a ggplot2-friendly way.
-License: None
+License: GPL (>= 2)
 Encoding: UTF-8
 RoxygenNote: 6.1.0
 Depends:
     ggplot2 (>= 2.0.0)
+URL: https://github.com/liamgilbey/ggwaffle
+BugReports: https://github.com/liamgilbey/ggwaffle/issues   

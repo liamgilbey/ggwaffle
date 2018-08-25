@@ -1,0 +1,16 @@
+navbar:
+  title: "ggwaffle"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "News"
+      href: news/index.html
+    - text: "Reference"
+      href: reference/index.html
+  right:
+    - icon: fa-github
+      href: https://github.com/liamgilbey/ggwaffle
+
+template:
+  params:
+    bootswatch: yeti

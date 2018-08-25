@@ -1,9 +1,6 @@
-#' Rename columns in a dataset
-#'
-#' This function is designed to take a dataset and a data aesthetic mapping and rename the columns.
-#' @param data Data to rename
-#' @param mapping A mapping as produce by \code{aes_d}
-#' @param compulsory_cols A character vector of the compulsory columns needed to complete the mapping
+# Rename columns in a dataset
+#
+# This function is designed to take a dataset and a data aesthetic mapping and rename the columns.
 aes_d_rename <- function(data, mapping, compulsory_cols){
   mapping <- aes_d_validate(mapping, compulsory_cols, names(data))
   for(i in 1:length(mapping)){
@@ -12,12 +9,9 @@ aes_d_rename <- function(data, mapping, compulsory_cols){
   data
 }
 
-#' Validate an \code{aes_d} mapping
-#'
-#' Don't just trust the user to provide the mappings we need
-#' @param mapping A mapping as produce by \code{aes_d}
-#' @param compulsory_cols A character vector of the compulsory columns needed to complete the mapping
-#' @param data_names A character vector of the names present in the dataset we are trying to map
+# Validate an \code{aes_d} mapping
+#
+# Don't just trust the user to provide the mappings we need
 aes_d_validate <- function(mapping, compulsory_cols, data_names){
   # missing columns
   missing_cols <- compulsory_cols[!compulsory_cols %in% names(mapping)]

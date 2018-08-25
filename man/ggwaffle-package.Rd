@@ -8,6 +8,14 @@
 \description{
 Creates waffle charts in a ggplot2-friendly way.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/liamgilbey/ggwaffle}
+  \item Report bugs at \url{https://github.com/liamgilbey/ggwaffle/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Liam Gilbey \email{liam.gilbey@gmail.com}
 
