@@ -1,5 +1,8 @@
 # ggwaffle <img src="man/figures/sticker.png" align="right" width=250/>
 
+[![Travis Build
+Status](https://travis-ci.org/liamgilbey/ggwaffle.svg?branch=master)](https://travis-ci.org/liamgilbey/ggwaffle)
+
 Create waffle visualisations in ggplot2-friendly way.
 
 ##  Acknowledgements

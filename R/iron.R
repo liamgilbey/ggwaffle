@@ -4,7 +4,7 @@
 #'
 #' Prepare raw data so it is fit to create a waffle visualisation. The type of data transformation that is required does not gel
 #' well with ggplot2 underlying mechanism. The way around this is to provide a function that does the preperation outside of ggplot.
-#' #' @param data A dataframe to feed into the waffle iron
+#' @param data A dataframe to feed into the waffle iron
 #' @param mapping A mapping as produce by \code{aes_d}
 #' @param rows The number of rows in the waffle
 #' @export

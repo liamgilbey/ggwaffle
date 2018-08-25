@@ -42,6 +42,7 @@ aes_d_validate <- function(mapping, compulsory_cols, data_names){
 #' Here we are mapping columns into a function so we can use standard names inside that function.
 #'
 #' A mapping looks like: <column_to_be_created> = <existing column>
+#' @param ... Unquoted, comma-seperated column mappings
 #' @export
 #' @examples
 #' aes_d(group = class)
