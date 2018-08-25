@@ -3,11 +3,43 @@
 #' This function is designed to take a dataset and a data aesthetic mapping and rename the columns.
 #' @param data Data to rename
 #' @param mapping A mapping as produce by \code{aes_d}
-aes_d_rename <- function(data, mapping){
-  for(i in mapping){
-    names(data)[names(data)==mapping] <- names(mapping)
+#' @param compulsory_cols A character vector of the compulsory columns needed to complete the mapping
+aes_d_rename <- function(data, mapping, compulsory_cols){
+  mapping <- aes_d_validate(mapping, compulsory_cols, names(data))
+  for(i in 1:length(mapping)){
+    names(data)[names(data)==mapping[i]] <- names(mapping)[i]
   }
   data
+}
+
+#' Validate an \code{aes_d} mapping
+#'
+#' Don't just trust the user to provide the mappings we need
+#' @param mapping A mapping as produce by \code{aes_d}
+#' @param compulsory_cols A character vector of the compulsory columns needed to complete the mapping
+#' @param data_names A character vector of the names present in the dataset we are trying to map
+aes_d_validate <- function(mapping, compulsory_cols, data_names){
+  # missing columns
+  missing_cols <- compulsory_cols[!compulsory_cols %in% names(mapping)]
+  if(length(missing_cols) > 0){
+    example <- paste(paste(missing_cols, "= your_column"), collapse = ", ")
+    error_message <- paste0("Please provide a mapping for the following columns: ", paste(missing_cols, collapse = ", "), "\n    For example:\n      aes_d(", example, ")")
+    stop(error_message, call. = F)
+  }
+  # additional columns
+  additional_cols <- names(mapping)[!names(mapping) %in% compulsory_cols]
+  if(length(additional_cols > 0)){
+    mapping <- mapping[names(mapping) %in% compulsory_cols]
+    warning_message <- paste0("Columns have been supplied to aes_d but are not required:\n    ", paste(additional_cols, collapse = ", "))
+    warning(warning_message, call. = F)
+  }
+  # incorrect columns
+  incorrect_cols <- mapping[!mapping %in% data_names]
+  if(length(incorrect_cols)>0){
+    error_message <- paste0("Columns are not present in your dataset:\n    ", paste(incorrect_cols, collapse = ", ") )
+    stop(error_message, call. = F)
+  }
+  return(mapping)
 }
 
 #' Aesthetic mappings for datasets

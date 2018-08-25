@@ -3,6 +3,7 @@
 export(GeomWaffle)
 export(aes_d)
 export(geom_waffle)
+export(scale_colour_waffle)
 export(scale_fill_waffle)
 export(theme_waffle)
 export(waffle_iron)

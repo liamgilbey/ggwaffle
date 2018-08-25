@@ -1,4 +1,4 @@
-# ggwaffle <img src="man/figures/sticker.png" align="right" />
+# ggwaffle <img src="man/figures/sticker.png" align="right" width=250/>
 
 Create waffle visualisations in ggplot2-friendly way.
 
@@ -25,7 +25,7 @@ ggwaffle also introduces a column mapping function, `aes_d`. At this stage I hav
 `aes_d` is obviously coined from ggplot's `aes` function and has a very similar idea. Here we are mapping column names to feed into a function so they can be renamed for used appropriately.
 ```r
 library(ggwaffle)
-waffle_data = waffle_iron(mpg, aes_d(group = class))
+waffle_data <- waffle_iron(mpg, aes_d(group = class))
 
 ggplot(waffle_data, aes(x, y, fill = group)) + 
   geom_waffle()
@@ -38,7 +38,7 @@ Using ``coord_equal`` is recommended to make the size of the blocks even in all 
 
 ```r
 iris$Species <- as.character(iris$Species)
-waffle_data = waffle_iron(iris, aes_d(group = Species))
+waffle_data <- waffle_iron(iris, aes_d(group = Species))
 
 ggplot(waffle_data, aes(x, y, fill = group)) + 
   geom_waffle() + 
