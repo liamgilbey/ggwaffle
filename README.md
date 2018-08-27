@@ -3,7 +3,7 @@
 [![Travis Build
 Status](https://travis-ci.org/liamgilbey/ggwaffle.svg?branch=master)](https://travis-ci.org/liamgilbey/ggwaffle)
 
-Create waffle visualisations in ggplot2-friendly way.
+Create waffle charts in R in a ggplot2-friendly way.
 
 ##  Acknowledgements
 Really all credit to [Bob Rudis](https://github.com/hrbrmstr) for the work done on the original [waffle package](https://github.com/hrbrmstr/waffle). 
