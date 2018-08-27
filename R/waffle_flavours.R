@@ -31,6 +31,6 @@ scale_fill_waffle <- function(..., na.value = "red"){
 #' @rdname waffle_scales
 #' @export
 scale_colour_waffle <- function(..., na.value = "red"){
-  discrete_scale(aesthetics = "fill", scale_name = "waffle", palette = waffle_pal(), na.value = na.value,
+  discrete_scale(aesthetics = "colour", scale_name = "waffle", palette = waffle_pal(), na.value = na.value,
                  ...)
 }

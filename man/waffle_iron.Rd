@@ -4,7 +4,7 @@
 \alias{waffle_iron}
 \title{Waffle Iron}
 \usage{
-waffle_iron(data, mapping, rows = 8)
+waffle_iron(data, mapping, rows = 8, sample_size = 1)
 }
 \arguments{
 \item{data}{A dataframe to feed into the waffle iron}
@@ -12,6 +12,8 @@ waffle_iron(data, mapping, rows = 8)
 \item{mapping}{A mapping as produce by \code{aes_d}}
 
 \item{rows}{The number of rows in the waffle}
+
+\item{sample_size}{The proportion of rows to sample the dataset (between 0 and 1). Useful when the dataset is too large to plot correctly.}
 }
 \description{
 Pour your data into a waffle iron to get ready to cook a waffle chart.
@@ -22,4 +24,6 @@ well with ggplot2 underlying mechanism. The way around this is to provide a func
 }
 \examples{
 waffle_iron(mpg, aes_d(group = class))
+
+waffle_iron(mpg, aes_d(group = class), sample_size = 0.75)
 }

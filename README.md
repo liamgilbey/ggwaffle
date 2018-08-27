@@ -11,8 +11,6 @@ Really all credit to [Bob Rudis](https://github.com/hrbrmstr) for the work done 
 ## Description
 ggwaffle is designed to work in a very similar way to the original [waffle package](https://github.com/hrbrmstr/waffle), while being slightly closer to the workflow of a standard ggplot graphic. Consequently, it is a little more verbose.
 
-Currently all ability to use FontAwesome icons or similar is unavailable.
-
 ## Installation
 Currently only available through github: 
 ```r
@@ -50,3 +48,22 @@ ggplot(waffle_data, aes(x, y, fill = group)) +
   theme_waffle()
 ```
 ![](https://github.com/liamgilbey/ggwaffle/raw/master/man/figures/README-example2.png)
+
+# Icons
+
+The best way to implement icons into waffle charts is to use Guangchuang YU's [emojifont](https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html) package. 
+
+```r
+library(emojifont)  
+library(dplyr)
+
+iris$Species <- as.character(iris$Species)
+waffle_data <- waffle_iron(iris, aes_d(group = Species)) %>% mutate(label = fontawesome('fa-twitter'))
+
+ggplot(waffle_data, aes(x, y, colour = group)) + 
+  geom_text(aes(label=label), family='fontawesome-webfont', size=4) +
+  coord_equal() + 
+  scale_colour_waffle() + 
+  theme_waffle()  
+```
+![](https://github.com/liamgilbey/ggwaffle/raw/master/man/figures/README-example3.png)
