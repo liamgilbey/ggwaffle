@@ -1,3 +1,8 @@
+# ggwaffle 0.2.2
+
+* Tiny bug fixes
+* Automatically removing NAs from the waffle iron
+
 # ggwaffle 0.2.1
 
 * Fixed bug `scale_colour_waffle`

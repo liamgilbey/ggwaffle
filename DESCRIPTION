@@ -1,7 +1,7 @@
 Package: ggwaffle
 Type: Package
 Title: Waffle Charts
-Version: 0.2.1
+Version: 0.2.2
 Date: 2018-08-25
 Authors@R: c(
     person("Liam", "Gilbey", email = "liam.gilbey@gmail.com", role = c("aut", "cre"), 

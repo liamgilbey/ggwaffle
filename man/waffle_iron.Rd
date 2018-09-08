@@ -4,7 +4,7 @@
 \alias{waffle_iron}
 \title{Waffle Iron}
 \usage{
-waffle_iron(data, mapping, rows = 8, sample_size = 1)
+waffle_iron(data, mapping, rows = 8, sample_size = 1, na.rm = T)
 }
 \arguments{
 \item{data}{A dataframe to feed into the waffle iron}
@@ -14,6 +14,8 @@ waffle_iron(data, mapping, rows = 8, sample_size = 1)
 \item{rows}{The number of rows in the waffle}
 
 \item{sample_size}{The proportion of rows to sample the dataset (between 0 and 1). Useful when the dataset is too large to plot correctly.}
+
+\item{na.rm}{A boolean flag to automatically remove NAs. Removing NAs will sometimes cause a missing notch in your waffle.}
 }
 \description{
 Pour your data into a waffle iron to get ready to cook a waffle chart.

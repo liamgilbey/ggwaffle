@@ -2,7 +2,7 @@ navbar:
   title: "ggwaffle"
   left:
     - text: "Home"
-      href: /
+      href: index.html
     - text: "News"
       href: news/
     - text: "Reference"
