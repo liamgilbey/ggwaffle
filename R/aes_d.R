@@ -63,7 +63,8 @@ aes_d_validate <- function(
 #' Aesthetic mappings for datasets
 #'
 #' The idea comes straight from \code{aes} in ggplot2. That provides a way to map columns of a dataset to features of graphic.
-#' Here we are mapping columns into a function so we can use standard names inside that function.
+#' Here we are mapping columns into a function so we can use standard names inside that function. This function variant
+#' expects unquoted string arguments, rather than the quoted version \link{\code{aes_d_}}
 #'
 #' A mapping looks like: <column_to_be_created> = <existing column>
 #' @param ... Unquoted, comma-seperated column mappings
@@ -73,4 +74,22 @@ aes_d_validate <- function(
 aes_d <- function (...)
 {
   as.list(match.call()[-1])
+}
+
+#' Aesthetic mappings for datasets
+#'
+#' The idea comes straight from \code{aes_} in ggplot2. That provides a way to map columns of a dataset to features of graphic.
+#' Here we are mapping columns into a function so we can use standard names inside that function. This function variant
+#' expects string argument, rather than the unquoted version \link{\code{aes_d}}
+#'
+#' A mapping looks like: <column_to_be_created> = <existing column>
+#' @param ... Unquoted, comma-seperated column mappings
+#' @export
+#' @examples
+#' aes_d(group = 'class')
+aes_d_ <- function(...){
+  dots <- list(...)
+  l <- lapply(dots, as.name)
+  names(l) <- names(dots)
+  l
 }
