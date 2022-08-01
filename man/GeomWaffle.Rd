@@ -4,7 +4,9 @@
 \name{GeomWaffle}
 \alias{GeomWaffle}
 \title{Geom Waffle}
-\format{An object of class \code{GeomWaffle} (inherits from \code{GeomTile}, \code{GeomRect}, \code{Geom}, \code{ggproto}, \code{gg}) of length 3.}
+\format{
+An object of class \code{GeomWaffle} (inherits from \code{GeomTile}, \code{GeomRect}, \code{Geom}, \code{ggproto}, \code{gg}) of length 3.
+}
 \usage{
 GeomWaffle
 }

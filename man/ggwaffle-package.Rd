@@ -6,6 +6,8 @@
 \alias{ggwaffle-package}
 \title{ggwaffle: Waffle Charts}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Creates waffle charts in a ggplot2-friendly way.
 }
 \seealso{

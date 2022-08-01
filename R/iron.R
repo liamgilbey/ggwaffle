@@ -14,7 +14,13 @@
 #' waffle_iron(mpg, aes_d(group = class))
 #'
 #' waffle_iron(mpg, aes_d(group = class), sample_size = 0.75)
-waffle_iron <- function(data, mapping, rows = 8, sample_size = 1, na.rm = T){
+waffle_iron <- function(
+  data,
+  mapping,
+  rows = 8,
+  sample_size = 1,
+  na.rm = T
+){
   # sample the data
   if(!(sample_size>0 & sample_size <=1)){
     stop("Please use a sample value between 0 and 1", call. = F)

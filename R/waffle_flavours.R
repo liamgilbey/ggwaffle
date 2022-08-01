@@ -23,14 +23,30 @@ NULL
 
 #' @rdname waffle_scales
 #' @export
-scale_fill_waffle <- function(..., na.value = "red"){
-  discrete_scale(aesthetics = "fill", scale_name = "waffle", palette = waffle_pal(), na.value = na.value,
-                 ...)
+scale_fill_waffle <- function(
+  ...,
+  na.value = "red"
+){
+  discrete_scale(
+    aesthetics = "fill",
+    scale_name = "waffle",
+    palette = waffle_pal(),
+    na.value = na.value,
+    ...
+  )
 }
 
 #' @rdname waffle_scales
 #' @export
-scale_colour_waffle <- function(..., na.value = "red"){
-  discrete_scale(aesthetics = "colour", scale_name = "waffle", palette = waffle_pal(), na.value = na.value,
-                 ...)
+scale_colour_waffle <- function(
+  ...,
+  na.value = "red"
+){
+  discrete_scale(
+    aesthetics = "colour",
+    scale_name = "waffle",
+    palette = waffle_pal(),
+    na.value = na.value,
+    ...
+  )
 }
