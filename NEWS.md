@@ -1,3 +1,16 @@
+# ggwaffle 0.2.5
+
+* Adding unit tests
+* Tidying up documentation and linting code
+* Replacing README with markdown generated from .Rmd
+* Fixing issue with factor variables in `waffle_iron`
+* Adding `aes_d_` function to enable more streamlined plot creation
+
+# ggwaffle 0.2.3
+
+* Fixing up issues with NAs (PR [here](https://github.com/liamgilbey/ggwaffle/pull/3))
+* General linting and documentation tidy ups
+
 # ggwaffle 0.2.2
 
 * Tiny bug fixes

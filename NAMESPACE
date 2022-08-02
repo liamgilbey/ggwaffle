@@ -2,6 +2,9 @@
 
 export(GeomWaffle)
 export(aes_d)
+export(aes_d_)
+export(aes_d_rename)
+export(aes_d_validate)
 export(geom_waffle)
 export(scale_colour_waffle)
 export(scale_fill_waffle)

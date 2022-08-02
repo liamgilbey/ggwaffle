@@ -1,8 +1,8 @@
 Package: ggwaffle
 Type: Package
 Title: Waffle Charts
-Version: 0.2.2
-Date: 2018-08-25
+Version: 0.2.5
+Date: 2022-08-01
 Authors@R: c(
     person("Liam", "Gilbey", email = "liam.gilbey@gmail.com", role = c("aut", "cre"), 
            )
@@ -11,8 +11,11 @@ Maintainer: Liam Gilbey <liam.gilbey@gmail.com>
 Description: Creates waffle charts in a ggplot2-friendly way.
 License: GPL (>= 2)
 Encoding: UTF-8
-RoxygenNote: 6.1.0
+RoxygenNote: 7.2.1
 Depends:
     ggplot2 (>= 2.0.0)
 URL: https://github.com/liamgilbey/ggwaffle
 BugReports: https://github.com/liamgilbey/ggwaffle/issues   
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
