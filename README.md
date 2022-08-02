@@ -7,6 +7,8 @@
 
 [![Travis Build
 Status](https://travis-ci.org/liamgilbey/ggwaffle.svg?branch=master)](https://travis-ci.org/liamgilbey/ggwaffle)
+[![Codecov test
+coverage](https://codecov.io/gh/liamgilbey/ggwaffle/branch/master/graph/badge.svg)](https://app.codecov.io/gh/liamgilbey/ggwaffle?branch=master)
 <!-- badges: end -->
 
 Create waffle charts in R in a ggplot2-friendly way.
