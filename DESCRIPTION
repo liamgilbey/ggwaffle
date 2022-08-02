@@ -17,5 +17,6 @@ Depends:
 URL: https://github.com/liamgilbey/ggwaffle
 BugReports: https://github.com/liamgilbey/ggwaffle/issues   
 Suggests: 
+    covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
