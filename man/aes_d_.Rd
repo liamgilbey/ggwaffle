@@ -12,7 +12,7 @@ aes_d_(...)
 \description{
 The idea comes straight from \code{aes_} in ggplot2. That provides a way to map columns of a dataset to features of graphic.
 Here we are mapping columns into a function so we can use standard names inside that function. This function variant
-expects string argument, rather than the unquoted version \link{\code{aes_d}}
+expects string argument, rather than the unquoted version \code{\link{aes_d}}
 }
 \details{
 A mapping looks like: <column_to_be_created> = <existing column>

@@ -7,7 +7,7 @@
 aes_d_validate(mapping, compulsory_cols, data_names)
 }
 \arguments{
-\item{mapping}{A mapping as provided by \link{\code{aes_d}}}
+\item{mapping}{A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset}
 
 \item{compulsory_cols}{A character vector of compulsory columns needed to perform renaming}
 

@@ -5,7 +5,7 @@
 #' Prepare raw data so it is fit to create a waffle visualisation. The type of data transformation that is required does not gel
 #' well with ggplot2 underlying mechanism. The way around this is to provide a function that does the preperation outside of ggplot.
 #' @param data A dataframe to feed into the waffle iron
-#' @param mapping A mapping as produce by \link{\code{aes_d}}, \link{\code{aes_d_}} or a character vector of a column present in the dataset
+#' @param mapping A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset
 #' @param rows The number of rows in the waffle
 #' @param sample_size The proportion of rows to sample the dataset (between 0 and 1). Useful when the dataset is too large to plot correctly.
 #' @param na.rm A boolean flag to automatically remove NAs. Removing NAs will sometimes cause a missing notch in your waffle.
@@ -26,6 +26,11 @@ waffle_iron <- function(
     stop("Please use a sample value between 0 and 1", call. = F)
   }
   sample_rows <- sample(x = 1:nrow(data), size = (nrow(data) * sample_size))
+  if(length(sample_rows) < rows){
+    min_sample_size <- round(rows / nrow(data), 2)
+    stop(paste0("The sample size is too low for this dataset, it must be at least ",min_sample_size) , call. = F)
+  }
+
   data <- data[sample_rows,]
 
   # if a character mapping supplied, generate an `aes_d_` mapping instead

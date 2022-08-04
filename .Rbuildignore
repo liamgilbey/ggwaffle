@@ -2,3 +2,9 @@
 ^\.Rproj\.user$
 ^codecov\.yml$
 ^\.github$
+^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.travis\.yml$
+^LICENSE\.md$

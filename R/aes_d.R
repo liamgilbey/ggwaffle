@@ -3,7 +3,7 @@
 #' This function is designed to take a dataset and a data aesthetic mapping and rename the columns.
 #'
 #' @param data Dataset to perform renaming
-#' @param mapping A mapping as provided by \link{\code{aes_d}}
+#' @param mapping A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset
 #' @param compulsory_cols A character vector of compulsory columns needed to perform renaming
 #'
 #' @keywords internal
@@ -25,7 +25,7 @@ aes_d_rename <- function(
 #'
 #' Don't just trust the user to provide the mappings we need
 #'
-#' @param mapping A mapping as provided by \link{\code{aes_d}}
+#' @param mapping A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset
 #' @param compulsory_cols A character vector of compulsory columns needed to perform renaming
 #' @param data_names Names from the incoming dataset to be renamed
 #'
@@ -64,11 +64,13 @@ aes_d_validate <- function(
 #'
 #' The idea comes straight from \code{aes} in ggplot2. That provides a way to map columns of a dataset to features of graphic.
 #' Here we are mapping columns into a function so we can use standard names inside that function. This function variant
-#' expects unquoted string arguments, rather than the quoted version \link{\code{aes_d_}}
+#' expects unquoted string arguments, rather than the quoted version \code{\link{aes_d_}}
 #'
 #' A mapping looks like: <column_to_be_created> = <existing column>
+#'
 #' @param ... Unquoted, comma-seperated column mappings
 #' @export
+#'
 #' @examples
 #' aes_d(group = class)
 aes_d <- function (...)
@@ -80,11 +82,13 @@ aes_d <- function (...)
 #'
 #' The idea comes straight from \code{aes_} in ggplot2. That provides a way to map columns of a dataset to features of graphic.
 #' Here we are mapping columns into a function so we can use standard names inside that function. This function variant
-#' expects string argument, rather than the unquoted version \link{\code{aes_d}}
+#' expects string argument, rather than the unquoted version \code{\link{aes_d}}
 #'
 #' A mapping looks like: <column_to_be_created> = <existing column>
+#'
 #' @param ... Unquoted, comma-seperated column mappings
 #' @export
+#'
 #' @examples
 #' aes_d(group = 'class')
 aes_d_ <- function(...){

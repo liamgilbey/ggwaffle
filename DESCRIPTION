@@ -5,11 +5,12 @@ Version: 0.2.5
 Date: 2022-08-01
 Authors@R: c(
     person("Liam", "Gilbey", email = "liam.gilbey@gmail.com", role = c("aut", "cre"), 
-           )
-  )
+          comment = c(ORCID = "0000-0002-9747-6608")
+        )
+       )
 Maintainer: Liam Gilbey <liam.gilbey@gmail.com>
 Description: Creates waffle charts in a ggplot2-friendly way.
-License: GPL (>= 2)
+License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.2.1
 Depends:

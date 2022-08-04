@@ -9,7 +9,7 @@ waffle_iron(data, mapping, rows = 8, sample_size = 1, na.rm = T)
 \arguments{
 \item{data}{A dataframe to feed into the waffle iron}
 
-\item{mapping}{A mapping as produce by \link{\code{aes_d}}, \link{\code{aes_d_}} or a character vector of a column present in the dataset}
+\item{mapping}{A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset}
 
 \item{rows}{The number of rows in the waffle}
 
