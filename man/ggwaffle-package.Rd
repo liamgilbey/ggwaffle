@@ -19,7 +19,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Liam Gilbey \email{liam.gilbey@gmail.com}
+\strong{Maintainer}: Liam Gilbey \email{liam.gilbey@gmail.com} (\href{https://orcid.org/0000-0002-9747-6608}{ORCID})
 
 }
 \keyword{internal}

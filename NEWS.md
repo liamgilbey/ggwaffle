@@ -5,6 +5,8 @@
 * Replacing README with markdown generated from .Rmd
 * Fixing issue with factor variables in `waffle_iron`
 * Adding `aes_d_` function to enable more streamlined plot creation
+* Adding `tile_shape` parameter
+* Adding github actions for pkgdown
 
 # ggwaffle 0.2.3
 
