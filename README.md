@@ -71,7 +71,6 @@ Using `coord_equal` is recommended to make the size of the blocks even
 in all dimensions.
 
 ``` r
-iris$Species <- as.character(iris$Species)
 waffle_data <- waffle_iron(iris, aes_d(group = Species))
 
 ggplot(waffle_data, aes(x, y, fill = group)) + 
@@ -82,6 +81,21 @@ ggplot(waffle_data, aes(x, y, fill = group)) +
 ```
 
 ![](man/figures/README-unnamed-chunk-3-1.png)<!-- -->
+
+The shape of the waffle tile can also be controlled, choosing from
+either a regular square, or a circle tile shape.
+
+``` r
+waffle_data <- waffle_iron(iris, aes_d(group = Species))
+
+ggplot(waffle_data, aes(x, y, colour = group)) + 
+  geom_waffle(tile_shape = 'circle', size = 12) + 
+  coord_equal() + 
+  scale_colour_waffle() + 
+  theme_waffle()
+```
+
+![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
 
 # Icons
 
@@ -103,4 +117,4 @@ ggplot(waffle_data, aes(x, y, colour = group)) +
   theme_waffle()  
 ```
 
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-5-1.png)<!-- -->

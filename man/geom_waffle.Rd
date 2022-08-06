@@ -9,6 +9,7 @@ geom_waffle(
   data = NULL,
   stat = "identity",
   position = "identity",
+  tile_shape = c("square", "circle"),
   ...,
   na.rm = FALSE,
   show.legend = NA,
@@ -41,6 +42,8 @@ layer, as a string.}
 
 \item{position}{Position adjustment, either as a string, or the result of
 a call to a position adjustment function.}
+
+\item{tile_shape}{Control the shape of the waffle tiles. One of either c("square", "circle")}
 
 \item{...}{Other arguments passed on to \code{\link[ggplot2:layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like

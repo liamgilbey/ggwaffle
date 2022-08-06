@@ -60,13 +60,24 @@ Functions have also been included to make the default graphics more waffle-like.
 Using ``coord_equal`` is recommended to make the size of the blocks even in all dimensions.
 
 ```{r, fig.width=12, fig.height=6}
-iris$Species <- as.character(iris$Species)
 waffle_data <- waffle_iron(iris, aes_d(group = Species))
 
 ggplot(waffle_data, aes(x, y, fill = group)) + 
   geom_waffle() + 
   coord_equal() + 
   scale_fill_waffle() + 
+  theme_waffle()
+```
+
+The shape of the waffle tile can also be controlled, choosing from either a regular square, or a circle tile shape.
+
+```{r, fig.width=12, fig.height=6}
+waffle_data <- waffle_iron(iris, aes_d(group = Species))
+
+ggplot(waffle_data, aes(x, y, colour = group)) + 
+  geom_waffle(tile_shape = 'circle', size = 12) + 
+  coord_equal() + 
+  scale_colour_waffle() + 
   theme_waffle()
 ```
 
