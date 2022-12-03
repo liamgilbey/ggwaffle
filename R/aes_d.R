@@ -5,6 +5,7 @@
 #' @param data Dataset to perform renaming
 #' @param mapping A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset
 #' @param compulsory_cols A character vector of compulsory columns needed to perform renaming
+#' @param optional_cols A character vector of optional columns needed to perform renaming
 #'
 #' @keywords internal
 #'
@@ -12,9 +13,15 @@
 aes_d_rename <- function(
   data,
   mapping,
-  compulsory_cols
+  compulsory_cols,
+  optional_cols = NA
 ){
-  mapping <- aes_d_validate(mapping, compulsory_cols, names(data))
+  mapping <- aes_d_validate(
+    mapping = mapping,
+    compulsory_cols = compulsory_cols,
+    optional_cols = optional_cols,
+    data_names = names(data)
+  )
   for(i in 1:length(mapping)){
     names(data)[names(data)==mapping[i]] <- names(mapping)[i]
   }
@@ -27,6 +34,7 @@ aes_d_rename <- function(
 #'
 #' @param mapping A mapping as produce by \code{\link{aes_d}}, \code{\link{aes_d_}} or a character vector of a column present in the dataset
 #' @param compulsory_cols A character vector of compulsory columns needed to perform renaming
+#' @param optional_cols A character vector of optional columns needed to perform renaming
 #' @param data_names Names from the incoming dataset to be renamed
 #'
 #' @keywords internal
@@ -35,19 +43,28 @@ aes_d_rename <- function(
 aes_d_validate <- function(
   mapping,
   compulsory_cols,
+  optional_cols = NA,
   data_names
 ){
-  # missing columns
+  # if we have filled in optional columns, combine them
+  if(!is.na(optional_cols)){
+    all_cols <- c(compulsory_cols, optional_cols)
+  } else{
+    all_cols <- compulsory_cols
+  }
+
+  # missing compulsory columns
   missing_cols <- compulsory_cols[!compulsory_cols %in% names(mapping)]
   if(length(missing_cols) > 0){
     example <- paste(paste(missing_cols, "= your_column"), collapse = ", ")
     error_message <- paste0("Please provide a mapping for the following columns: ", paste(missing_cols, collapse = ", "), "\n    For example:\n      aes_d(", example, ")")
     stop(error_message, call. = F)
   }
+
   # additional columns
-  additional_cols <- names(mapping)[!names(mapping) %in% compulsory_cols]
+  additional_cols <- names(mapping)[!names(mapping) %in% all_cols]
   if(length(additional_cols > 0)){
-    mapping <- mapping[names(mapping) %in% compulsory_cols]
+    mapping <- mapping[names(mapping) %in% all_cols]
     warning_message <- paste0("Columns have been supplied to aes_d but are not required:\n    ", paste(additional_cols, collapse = ", "))
     warning(warning_message, call. = F)
   }
@@ -57,6 +74,7 @@ aes_d_validate <- function(
     error_message <- paste0("Columns are not present in your dataset:\n    ", paste(incorrect_cols, collapse = ", ") )
     stop(error_message, call. = F)
   }
+
   return(mapping)
 }
 

@@ -14,6 +14,9 @@
 #' waffle_iron(mpg, aes_d(group = class))
 #'
 #' waffle_iron(mpg, aes_d(group = class), sample_size = 0.75)
+#'
+#' # data can be facetted by supplying a `facet_with` argument
+#' waffle_iron(mpg, aes_d(group = class, facet_with = year))
 waffle_iron <- function(
   data,
   mapping,
@@ -39,13 +42,51 @@ waffle_iron <- function(
   }
 
   # create the waffle dataset
-  data <- aes_d_rename(data, mapping, c("group"))
+  data <- aes_d_rename(
+    data = data,
+    mapping = mapping,
+    compulsory_cols = c("group"),
+    optional_cols = c("facet_with")
+  )
   data <- data[order(data$group),]
-  grid_data <- expand.grid(y = 1:rows, x = seq_len((ceiling(nrow(data) / rows))))
-  grid_data$group <- c(data$group, as.factor(rep(NA, nrow(grid_data) - length(data$group))))
+
+  # if we need to facet, split the data, and then recombine
+  if('facet_with' %in% names(data)){
+    data_split <- split(data, as.factor(data$facet_with))
+    grid_data_list <- mapply(
+      FUN = function(x, y, rows){
+        g <- .waffle_iron_expander(
+          data = x,
+          rows = rows
+        )
+        g$facet_with <- y
+        g
+      },
+      x = data_split,
+      y = names(data_split),
+      MoreArgs = list(rows = rows),
+      SIMPLIFY = FALSE
+    )
+    grid_data <- do.call(rbind, grid_data_list)
+
+  } else{
+    grid_data <- .waffle_iron_expander(data, rows)
+  }
+
   # deal with NAs
   if(na.rm == T){
     grid_data <- grid_data[!is.na(grid_data$group),]
   }
+  grid_data
+}
+
+
+#' @internal
+.waffle_iron_expander <- function(
+  data,
+  rows
+){
+  grid_data <- expand.grid(y = 1:rows, x = seq_len((ceiling(nrow(data) / rows))))
+  grid_data$group <- c(data$group, as.factor(rep(NA, nrow(grid_data) - length(data$group))))
   grid_data
 }
