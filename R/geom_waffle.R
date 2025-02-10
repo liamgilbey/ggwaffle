@@ -17,7 +17,7 @@ geom_waffle <- function(
   na.rm = FALSE,
   show.legend = NA,
   inherit.aes = TRUE
-){
+) {
   tile_shape <- match.arg(tile_shape)
   layer(
     data = data,
@@ -45,7 +45,7 @@ GeomWaffleSquare <- ggproto(
   GeomTile,
   default_aes = aes(
     colour = "white",
-    size = 2,
+    linewidth = 2,
     alpha = NA
   ),
   required_aes = c("x", "y", "fill")
